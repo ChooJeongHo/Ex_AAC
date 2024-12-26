@@ -12,16 +12,8 @@ import androidx.room.Room
 
 class MainActivity : AppCompatActivity() {
     // Database 및 ViewModel 설정
-    private val todoDatabase by lazy {
-        Room.databaseBuilder(
-            applicationContext,
-            TodoDatabase::class.java,
-            "todo_database"
-        ).build()
-    }
-    private val repository by lazy { TodoRepository(todoDatabase.todoDao()) }
     private val todoViewModel: TodoViewModel by viewModels {
-        TodoViewModelFactory(repository)
+        TodoViewModelFactory(TodoRepository(applicationContext))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

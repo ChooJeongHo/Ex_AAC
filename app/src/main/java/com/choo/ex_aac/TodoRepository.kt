@@ -1,8 +1,10 @@
 package com.choo.ex_aac
 
+import android.content.Context
 import androidx.lifecycle.LiveData
 
-class TodoRepository(private val todoDao: TodoDao) {
+class TodoRepository(context: Context) {
+    private val todoDao: TodoDao = TodoDatabase.getDatabase(context).todoDao()
     val todos: LiveData<List<Todo>> = todoDao.getAllTodos()
 
     suspend fun insert(todo: Todo) {
