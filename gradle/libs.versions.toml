@@ -9,6 +9,10 @@ appcompat = "1.7.0"
 material = "1.12.0"
 activity = "1.9.3"
 constraintlayout = "2.2.0"
+paging = "3.3.5"
+ksp = "1.9.10-1.0.13"
+room = "2.6.1"  # Add this line
+lifecycle = "2.8.7"  # Add this line
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -19,18 +23,17 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
-room-runtime = "androidx.room:room-runtime:2.5.2"
-room-ktx = "androidx.room:room-ktx:2.5.2"
-room-compiler = "androidx.room:room-compiler:2.5.2"
-lifecycle-viewmodel-ktx = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
-lifecycle-livedata-ktx = "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
-lifecycle-runtime-ktx = "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1"
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }  # Update this line
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }  # Update this line
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }  # Update this line
+lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }  # Update this line
+lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }  # Update this line
+lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }  # Update this line
+paging-runtime = { group = "androidx.paging", name = "paging-runtime", version.ref = "paging" }  # Add this line
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-android = { id = "com.android.application", version = "8.1.2" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version = "1.9.10" }
-ksp = { id = "com.google.devtools.ksp", version = "1.9.10-1.0.13" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
 

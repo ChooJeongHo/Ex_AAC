@@ -54,4 +54,5 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.ktx) // ViewModel KTX
     implementation(libs.lifecycle.livedata.ktx)  // LiveData 사용
     implementation(libs.lifecycle.runtime.ktx)  // Lifecycle Runtime KTX
+    implementation(libs.paging.runtime)  // Add this line
 }
