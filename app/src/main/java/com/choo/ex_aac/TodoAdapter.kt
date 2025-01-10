@@ -33,3 +33,4 @@ class TodoAdapter(private val onDeleteClick: (Todo) -> Unit) :
         override fun areContentsTheSame(oldItem: Todo, newItem: Todo): Boolean = oldItem == newItem
     }
 }
+// 뷰바인딩 적용
