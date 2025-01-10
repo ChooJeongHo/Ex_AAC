@@ -8,26 +8,24 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.choo.ex_aac.databinding.ItemTodoBinding
 
 class TodoAdapter(private val onDeleteClick: (Todo) -> Unit) :
     ListAdapter<Todo, TodoAdapter.TodoViewHolder>(TodoDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_todo, parent, false)
-        return TodoViewHolder(view)
+        val binding = ItemTodoBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return TodoViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
         holder.bind(getItem(position), onDeleteClick)
     }
 
-    class TodoViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-        private val titleTextView: TextView = view.findViewById(R.id.titleTextView)
-        private val deleteButton: Button = view.findViewById(R.id.deleteButton)
-
+    class TodoViewHolder(private val binding: ItemTodoBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(todo: Todo, onDeleteClick: (Todo) -> Unit) {
-            titleTextView.text = todo.title
-            deleteButton.setOnClickListener {
+            binding.titleTextView.text = todo.title
+            binding.deleteButton.setOnClickListener {
                 onDeleteClick(todo)
             }
         }
